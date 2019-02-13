@@ -1,14 +1,15 @@
 pipeline {
     agent any
-    def mvnHome
     stages {
+        def mvnHome
+        mvnHome=tool 'M3'
         stage ('Compile Stage') {
 
             steps {
 
                     sh "'${mvnHome}/bin/mvn' clean compile"
             }
-            mvnHome=tool 'M3'
+            
         }
 
         stage ('Testing Stage') {
