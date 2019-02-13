@@ -1,7 +1,8 @@
 pipeline {
     agent any
-
+    def mvnHome
     stages {
+        mvnHome=tools 'M3'
         stage ('Compile Stage') {
 
             steps {
