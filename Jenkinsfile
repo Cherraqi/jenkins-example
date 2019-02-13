@@ -24,8 +24,7 @@ node {
          }
 
    
-   stage('Results') {
-      junit '**/target/surefire-reports/TEST-*.xml'
-      archive 'target/*.jar'
+   stage('Deploy') {
+     sh "'${mvnHome}/bin/mvn' deploy"
    }
 }
